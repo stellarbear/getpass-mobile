@@ -1,0 +1,42 @@
+name: getpass
+description: stateless cross-platform password manager (generator)
+version: 0.12.0
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^0.1.2
+  rxdart: ^0.20.0
+  url_launcher: ^5.0.1
+  shared_preferences: ^0.5.2
+  flutter_launcher_icons: ^0.7.2
+  flutter_material_color_picker: ^1.0.0
+  jdenticon_dart: ^1.2.0
+  flutter_svg: ^0.10.3
+  flare_flutter: ^1.5.1
+  package_info: ^0.4.0+4
+  encrypt: ^3.0.0
+
+dev_dependencies:
+  test: ^1.5.0
+  flutter_test:
+    sdk: flutter
+
+flutter_icons:
+  image_path: "assets/icon.png"
+  android: false
+  ios: true
+
+flutter:
+
+  assets:
+   - assets/localization/eng.png
+   - assets/localization/rus.png
+   - assets/animation/getpass.flr
+   
+  uses-material-design: true
