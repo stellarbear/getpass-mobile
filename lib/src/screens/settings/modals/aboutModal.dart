@@ -79,7 +79,6 @@ Widget aboutModal(BuildContext context) {
           ),
           HyperLinkText(
             context: context,
-            isEnabled: false,
             url: 'https://github.com/stellarbear/getpass-desktop',
             text: i18n.get(at: I18n.AboutDesktop),
           ),
@@ -103,15 +102,15 @@ Widget aboutModal(BuildContext context) {
     return Row(
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
+        Container(
+          child: platformList(),
+        ),
         Container(
           width: 80,
           height: 80,
           child: logo(),
-        ),
-        Container(
-          child: platformList(),
         ),
       ],
     );
@@ -164,9 +163,9 @@ Widget aboutModal(BuildContext context) {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           welcome(),
-          platforms(),
           intro(),
           tips(),
+          platforms(),
         ],
       ),
     ),
