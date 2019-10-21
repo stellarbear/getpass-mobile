@@ -19,7 +19,7 @@ String base({String alphabet, String input}) {
   //  tail is withdrawn
   //  8 - UTF8 char length in bits
   int mainBitLength =
-      ((input.length * 8 / baseCount.bitCount) * baseCount.bitCount).floor();
+      ((input.length * 8 / baseCount.bitCount).floor() * baseCount.bitCount);
   int mainCharCount =
       (mainBitLength * baseCount.charCount / baseCount.bitCount).floor();
   int length = (mainCharCount / baseCount.charCount).floor();
@@ -29,11 +29,12 @@ String base({String alphabet, String input}) {
     int bitIndex = i * baseCount.bitCount;
 
     String bitArray = data.substring(bitIndex, bitIndex + baseCount.bitCount);
-    int number = int.tryParse(bitArray, radix: 2);
+    BigInt number = BigInt.from(int.parse(bitArray, radix: 2));
+    BigInt alphabetLength = BigInt.from(alphabet.length);
 
     for (int c = 0; c < baseCount.charCount; c++) {
-      result += alphabet[number % alphabet.length];
-      number = (number / alphabet.length).truncate();
+      result += alphabet[(number % alphabetLength).toInt()];
+      number = number ~/ alphabetLength;
     }
   }
 

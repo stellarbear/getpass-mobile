@@ -16,6 +16,7 @@ import 'package:getpass/src/infrastructure/storage.dart';
 //  flutter packages pub run flutter_launcher_icons:main
 void main() async {
   //  debugPaintSizeEnabled = true;
+  WidgetsFlutterBinding.ensureInitialized();
 
   await storage.init();
 
