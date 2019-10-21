@@ -1,6 +1,6 @@
 name: getpass
 description: stateless cross-platform password manager (generator)
-version: 0.12.0
+version: 0.13.0
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
